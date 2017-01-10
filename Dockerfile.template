@@ -5,7 +5,8 @@ ENV INITSYSTEM on
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
-      parprouted dhcp-helper avahi-daemon
+      parprouted dhcp-helper avahi-daemon \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY conf/dhcp-helper /etc/default/dhcp-helper
 COPY conf/avahi-daemon.conf /etc/avahi/avahi-daemon.conf
