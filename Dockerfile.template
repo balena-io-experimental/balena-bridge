@@ -7,4 +7,7 @@ RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
       parprouted dhcp-helper avahi-daemon
 
-CMD while : ; do echo "Idling..."; sleep 600; done
+COPY conf/dhcp-helper /etc/default/dhcp-helper
+COPY start.sh ./
+
+CMD ["bash", "start.sh"]

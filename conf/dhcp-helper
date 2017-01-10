@@ -1,0 +1,2 @@
+# relay dhcp requests as broadcast to wlan0
+DHCPHELPER_OPTS="-b wlan0"
