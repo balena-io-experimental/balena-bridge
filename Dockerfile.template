@@ -1,0 +1,10 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-debian:latest
+
+WORKDIR /usr/src/app
+ENV INITSYSTEM on
+
+RUN apt-get update && \
+    apt-get install -yq --no-install-recommends \
+      parprouted dhcp-helper avahi-daemon
+
+CMD while : ; do echo "Idling..."; sleep 600; done
