@@ -8,6 +8,7 @@ RUN apt-get update && \
       parprouted dhcp-helper avahi-daemon
 
 COPY conf/dhcp-helper /etc/default/dhcp-helper
+COPY conf/avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 COPY start.sh ./
 
 CMD ["bash", "start.sh"]
