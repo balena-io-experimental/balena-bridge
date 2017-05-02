@@ -1,5 +1,7 @@
 # resin-bridge
 
+**⚠ This project only works on devices running resinOS 1.x, that release uses connman for network connectivity. ⚠**
+
 A simple [resin.io](https://resin.io) setup to bridge `wlan0` to `eth0`, and
 thus share the device's wifi connection with the devices plugged into it over
 Ethernet.
